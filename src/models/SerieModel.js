@@ -8,10 +8,7 @@ const serieSchema = new mongodb.mongoose.Schema(
     category: { type: String, required: false },
     language: { type: String, required: false },
     genres: { type: Array, required: false },
-    releaseDates: {
-      firstDate: { type: String, required: false },
-      endDay: { type: String, required: false },
-    },
+    createdby: { type: String, required: false },
     country: { type: String, required: false },
   },
   {
