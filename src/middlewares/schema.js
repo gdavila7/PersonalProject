@@ -1,3 +1,4 @@
+// below is a decapreted library
 //import { makeExecutableSchema } from 'graphql-tools';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
@@ -16,6 +17,7 @@ const typeDefs = `
         urlImage: String!
         category: String
         genres: [String]
+        createdby: String
     }
 
     type Mutation {
@@ -27,6 +29,7 @@ const typeDefs = `
         urlImage: String!
         category: String
         genres: [String]
+        createdby: String
     }
 `;
 
