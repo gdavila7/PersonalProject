@@ -1,5 +1,5 @@
 import Series from '../models/SerieModel';
-//const logger = require('@condor-labs/logger');
+const logger = require('@condor-labs/logger');
 
 export const getSeries = async (req, res) => {
   const series = await Series.find();
@@ -22,4 +22,10 @@ export const createSerie = async (req, res) => {
 
   const serieSaved = await newSerie.save();
   res.status(201).json(serieSaved);
+};
+
+export const getSeriesById = async (req, res) => {
+  logger.information({ idserie: req.params.id });
+  const seriesbyid = await Series.findById(req.params.id);
+  res.json(seriesbyid);
 };
