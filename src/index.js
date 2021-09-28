@@ -53,3 +53,5 @@ app.use(
 );
 
 app.listen(7000, () => console.log('server on port 7000'));
+
+module.exports = app;
