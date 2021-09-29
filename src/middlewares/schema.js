@@ -9,6 +9,7 @@ const typeDefs = `
         hello: String
         greet(name: String): String
         series: [Serie]
+        seriesbyid(id: String): Serie
     }
 
     type Serie {
