@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  seriesapi:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 5001:7000
+    depends_on:
+      - redis
+    command: 'pm2-runtime start npm -- run server'
+    
+  redis:
+    image: redis:alpine
+    command: redis-server --appendonly yes
+    hostname: redis 
+    ports:
+      - target: 6379
+        published: 6380
+        protocol: tcp
+        mode: host
+    volumes:
+        - redis_data:/data
+    restart: always
+    environment:
+      - REDIS_REPLICATION_MODE=master
+    
+volumes:
+    redis_data:

@@ -10,6 +10,7 @@
   "scripts": {
     "build": "babel src -d dist --source-maps",
     "serve": "node dist/index.js",
+    "server": "babel-node ./src/index.js",
     "dev": "nodemon src/index.js --exec babel-node",
     "lint": "eslint .",
     "format": "prettier \"**/*.{js,jsx,ts,tsx}\" --write",
